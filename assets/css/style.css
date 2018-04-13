@@ -1,0 +1,269 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 100%;
+    background-color: #ededed;
+}
+
+/* ============= Header ============= */
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #3590AB;
+    color: white;
+    font-size:3rem;
+    z-index: 10000;
+    box-shadow: -5px 1px 20px 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+header .buffer {
+    margin: 15px;
+}
+
+/* ============= Sidebar ============= */
+
+aside {
+    position: fixed;
+    transition: 0.1s;
+    z-index: 10003;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    background: #34495e;
+    color: white;
+    font-size:2rem;
+    box-shadow: -5px 1px 20px 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+aside h1 {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search_field li {
+    margin-bottom: 25px;
+}
+
+#random_field .button {
+    width: 90%;
+}
+
+input {
+    background-color: #293a4a;
+    color: #536a81;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+.button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3498db;
+    margin: 5px;
+    border: none;
+    padding: 5px 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+#search_field .active {
+    background-color: #0d5ee0;
+}
+
+blockquote {
+    text-align: left;
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 5px;
+    padding: .5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    max-width: 500px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+blockquote::before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 2em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em;
+}
+
+blockquote a {
+    font: 16px/1.5 "Courier New", Arial, sans-serif;
+    color: #222;
+    text-decoration: none;
+}
+
+.closed {
+    width: 0;
+}
+
+.hamburger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* ============= Main ============= */
+
+main {
+    margin-top: 92px;
+    justify-content: space-evenly;
+}
+
+.movies {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.movies:after {
+    content: "";
+    flex: auto;
+    margin: 5%;
+}
+
+.movie {
+    display: inline-block;
+    margin: 10px;
+    float: left;
+    width: 134px;
+    font-size: 0.8em;
+}
+
+.movie .cover {
+    background-image: url(../media/placeholder.png);
+    background-size: 134px 196px;
+    width: 134px;
+    height: 196px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.movie .title {
+    height: auto;
+    color: black;
+    margin: 6px 0 4px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 2px;
+}
+.movie .year {
+    font-size: 0.85em;
+    color: #5b5b5b;
+    display: inline;
+}
+
+/* ============= General CSS ============= */
+
+.hidden {
+    display: none;
+}
+
+.buffer {
+    margin: 15px;
+    overflow: hidden;
+}
+
+/* ============= Mediaqueries ============= */
+
+
+@media only screen and (max-width: 960px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header {
+        height: 50px;
+    }
+
+    .hamburger {
+        font-size: 2rem;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header {
+        height: 50px;
+    }
+
+    header .buffer {
+        margin: 5px;
+    }
+
+    .hamburger {
+        font-size: 1.5rem !important;
+        top: 5px;
+        left: 5px;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .hamburger {
+        font-size: 2rem !important;
+    }
+
+    main {
+        margin-top: 70px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    header {
+        height: 40px;
+    }
+
+    .hamburger {
+        font-size: 1.3rem !important;
+    }
+}
